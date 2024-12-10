@@ -11,7 +11,7 @@ const { CLIENT_RENEG_WINDOW } = require("tls");
 require("dotenv").config();
 const app = express();
 const PORT = 8000
-const URI = process.env.MONGO_URI
+const URL = process.env.MONGO_URI
 //Connecting EJS File
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
@@ -19,7 +19,7 @@ app.set("views", path.resolve("./views"));
 
 
 //Database Connection
-mongoose.connect("mongodb://localhost:27017/qr-generate",{
+mongoose.connect(URL,{
     
 })
 .then(() => {
